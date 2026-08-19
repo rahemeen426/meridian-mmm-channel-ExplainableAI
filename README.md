@@ -56,7 +56,7 @@ The analysis combines:
 
 *Fig. 2 — Daily spend by channel. Google Shopping is consistently dominant; Meta Facebook spend is concentrated in 2020 and largely absent after 2021; Google PMax only ramps up from mid-2023 onward.*
 
-<p align="center"><img src="outputs/charts/_spend_concentration.png" width="600" alt="Spend concentration by channel"></p>
+<p align="center"><img src="outputs/charts/spend_concentration.png" width="600" alt="Spend concentration by channel"></p>
 
 *Fig. 3 — Spend concentration: Google Shopping 81.1%, Google PMax 12.3%, Meta Facebook 3.5%, Google Paid Search 3.0%.*
 
@@ -80,7 +80,7 @@ The analysis combines:
 
 ### 3.1 Channel Contributions
 
-<p align="center"><img src="outputs/charts/channel_contribution_bump.png" width="700" alt="Channel contribution bump chart across model knots"></p>
+<p align="center"><img src="outputs/charts/channel_contribution.png" width="700" alt="Channel contribution bump chart across model knots"></p>
 
 *Fig. 5 — Channel contribution bump chart: relative contribution rank (1 = highest) across the 24 model knots, spanning the full period.*
 
@@ -99,7 +99,7 @@ Contribution is not evenly distributed or constant over time. Google Shopping (t
 
 Marginal ROI is lower than average ROI for every channel, as expected under saturation. Google Shopping's mROI (0.061) is roughly **2×** Google Paid Search's and **3.6×** Meta Facebook's — making it the best channel for incremental budget. Google Paid Search's high average ROI should be read cautiously: its spend was concentrated in short bursts (late 2020, mid-2022), giving it a standard deviation (0.065) nearly as large as its mean.
 
-<p align="center"><img src="outputs/charts/hill_saturation_curves.png" width="750" alt="Hill saturation response curves by channel"></p>
+<p align="center"><img src="outputs/charts/response_curves.png" width="750" alt="Hill saturation response curves by channel"></p>
 
 *Fig. 6 — Hill saturation response curves by channel. Solid line = observed spend range; dashed = estimated impact beyond current spend; dot = current spend level; shaded area = uncertainty.*
 
@@ -109,22 +109,22 @@ Google Shopping's curve is still rising steadily with no clear flattening — ro
 
 A Gradient Boosting model (300 estimators, max depth 2, learning rate 0.03) was trained on the same features as the Meridian model to predict `ALL_PURCHASES` (80/20 time split), then explained with SHAP to cross-check which variables drive predictions.
 
-<p align="center"><img src="outputs/charts/fig7_shap_summary.png" width="700" alt="SHAP summary plot ranking feature impact"></p>
+<p align="center"><img src="outputs/charts/shap_summary.png" width="700" alt="SHAP summary plot ranking feature impact"></p>
 
 *Fig. 7 — SHAP summary plot, features ranked by mean |SHAP value|.*
 
 Organic search and referral clicks outrank every paid channel — expected, since these unpaid signals are closely tied to underlying demand that Meridian is specifically designed to disentangle from paid effects, while this simpler surrogate cannot. Among paid channels, **Google Shopping has the strongest influence**, consistent with the Meridian results.
 
 <p align="center">
-<img src="outputs/charts/fig8_shap_google_shopping.png" width="410" alt="SHAP dependence plot for Google Shopping spend">
-<img src="outputs/charts/fig9_shap_google_pmax.png" width="410" alt="SHAP dependence plot for Google PMax spend">
+<img src="outputs/charts/shap_dependence_google_shopping.png" width="410" alt="SHAP dependence plot for Google Shopping spend">
+<img src="outputs/charts/shap_dependence_meta_facebook.png" width="410" alt="SHAP dependence plot for Google PMax spend">
 </p>
 
 *Fig. 8 (left) — SHAP dependence: Google Shopping spend shows a clear positive, accelerating relationship above ~€10,000/day. Fig. 9 (right) — Google PMax's SHAP impact jumps from negative to a small positive value once spending starts, then flattens — consistent with PMax being a newer channel the model hasn't fully characterized yet.*
 
 <p align="center">
-<img src="outputs/charts/fig10_shap_google_paid_search.png" width="410" alt="SHAP dependence plot for Google Paid Search spend">
-<img src="outputs/charts/fig11_shap_meta_facebook.png" width="410" alt="SHAP dependence plot for Meta Facebook spend">
+<img src="outputs/charts/shap_dependence_google_paid_search.png" width="410" alt="SHAP dependence plot for Google Paid Search spend">
+<img src="outputs/charts/shap_dependence_meta_facebook.png" width="410" alt="SHAP dependence plot for Meta Facebook spend">
 </p>
 
 *Fig. 10 (left) — Google Paid Search shows a positive spend-impact relationship, with some high-spend days showing outsized effects (likely coinciding with organic demand spikes). Fig. 11 (right) — Meta Facebook's SHAP values sit close to zero with some negative impact at low spend, reinforcing that it's the least efficient channel and may be over-funded relative to its effectiveness.*

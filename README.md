@@ -48,7 +48,7 @@ The analysis combines:
 - **Controls:** organic/branded/referral/email traffic, discount rate, trend, day-of-week, `is_weekend`. `DIRECT_CLICKS` was excluded (zero variance for this organization).
 - **Outliers:** 28 days flagged via |z| > 3, retained as genuine demand spikes rather than removed as errors.
 
-<p align="center"><img src="outputs\charts\fig1_daily_purchases.png" width="700" alt="Daily purchases over time, showing recurring November spikes"></p>
+<p align="center"><img src="outputs/charts/outputs/charts/fig1_daily_purchases.png" width="700" alt="Daily purchases over time, showing recurring November spikes"></p>
 
 *Fig. 1 — Daily purchases, Jan 2020–Jun 2024. Recurring November spikes, growing year over year, dominate the series (Black Friday / holiday promotions).*
 

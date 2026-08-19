@@ -48,11 +48,11 @@ The analysis combines:
 - **Controls:** organic/branded/referral/email traffic, discount rate, trend, day-of-week, `is_weekend`. `DIRECT_CLICKS` was excluded (zero variance for this organization).
 - **Outliers:** 28 days flagged via |z| > 3, retained as genuine demand spikes rather than removed as errors.
 
-<p align="center"><img src="outputs/charts/daily_purchases" width="700" alt="Daily purchases over time, showing recurring November spikes"></p>
+<p align="center"><img src="outputs/charts/daily_purchases.png" width="700" alt="Daily purchases over time, showing recurring November spikes"></p>
 
 *Fig. 1 — Daily purchases, Jan 2020–Jun 2024. Recurring November spikes, growing year over year, dominate the series (Black Friday / holiday promotions).*
 
-<p align="center"><img src="outputs/charts/spend_by_channel.png" width="700" alt="Daily media spend by channel"></p>
+<p align="center"><img src="outputs/charts/media_spend_trends.png" width="700" alt="Daily media spend by channel"></p>
 
 *Fig. 2 — Daily spend by channel. Google Shopping is consistently dominant; Meta Facebook spend is concentrated in 2020 and largely absent after 2021; Google PMax only ramps up from mid-2023 onward.*
 

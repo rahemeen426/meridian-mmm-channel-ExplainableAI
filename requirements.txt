@@ -1,0 +1,53 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+shap
+google-meridian
+tensorflow
+tensorflow-probability
+jupyter
+openpyxl
+
+##  VS Code setup
+
+```bash
+# 1. Open the `project/` folder in VS Code (File > Open Folder...)
+
+# 2. Create and activate a virtual environment (Python 3.10+; Meridian
+python3 -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. In VS Code: Ctrl/Cmd+Shift+P -> "Python: Select Interpreter" -> choose .venv
+```
+`requirements.txt` intentionally omits `decimal` and `datetime` from the
+assignment README's install command -- both are Python standard-library
+modules, not pip packages, and `pip install decimal datetime` will either
+error or pull unrelated packages.
+
+## Running it
+
+Each task has its own script in `src/`, meant to be run in order (eachreads the previous step's output):
+
+```bash
+cd src
+python preprocessing.py     # Task 2 - cleans data -> data/mmm_modeling_dataset.csv
+python eda.py                # Task 1 - charts/tables -> outputs/charts, outputs/tables
+python modeling.py           # Task 3 - fits Meridian, pickles the model -> outputs/
+python roi.py                # Task 4 - ROI / mROI table -> outputs/tables
+python shap_analysis.py      # Task 5 - SHAP plots -> outputs/charts
+python scenarios.py          # Task 6 - budget scenario comparison -> outputs/tables
+```
+
+Or run everything at once:
+
+```bash
+python src/main.py
+```
+
+Or work interactively in `notebooks/mmm_homework.ipynb` (each section calls
+the same `src/` functions).

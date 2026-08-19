@@ -1,0 +1,5 @@
+channel,roi_mean,roi_std,mroi_mean,mroi_std,vs_portfolio_avg_roi,investment_status
+google_shopping,0.08245706,0.008792083,0.061402977,0.006505933,-0.01307568,near-optimal
+google_paid_search,0.08575205,0.06470654,0.032550283,0.02590614,-0.041928373,over-invested (saturated)
+google_pmax,0.0671988,0.028383585,0.027565492,0.013479686,-0.046913162,over-invested (saturated)
+meta_facebook,0.06250671,0.030492634,0.017150285,0.008886193,-0.057328373,over-invested (saturated)

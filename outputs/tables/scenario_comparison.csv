@@ -1,0 +1,4 @@
+Scenario,Incremental Outcome (Purchases),Incremental vs Historical Baseline,ROI
+Equal allocation,332187.15625,-281394.15625,0.043298639357089996
+mROI optimized,626163.9375,12582.625,0.08162742108106613
+Saturation-aware,616882.6875,3301.375,0.0804070234298706

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+outputs/fitted_meridian_model.pkl
+data/mmm_modeling_dataset.csv
+data/mmm_modeling_dataset.parquet
+.ipynb_checkpoints/

@@ -1,0 +1,5 @@
+channel,mean_abs_shap,shap_rank
+google_shopping,28.734719615293326,1.0
+google_pmax,21.32081777687886,2.0
+google_paid_search,3.8600272971677163,3.0
+meta_facebook,3.5208860111165534,4.0

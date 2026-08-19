@@ -48,15 +48,15 @@ The analysis combines:
 - **Controls:** organic/branded/referral/email traffic, discount rate, trend, day-of-week, `is_weekend`. `DIRECT_CLICKS` was excluded (zero variance for this organization).
 - **Outliers:** 28 days flagged via |z| > 3, retained as genuine demand spikes rather than removed as errors.
 
-<p align="center"><img src="outputs/charts/outputs/charts/fig1_daily_purchases.png" width="700" alt="Daily purchases over time, showing recurring November spikes"></p>
+<p align="center"><img src="outputs/charts/daily_purchases" width="700" alt="Daily purchases over time, showing recurring November spikes"></p>
 
 *Fig. 1 — Daily purchases, Jan 2020–Jun 2024. Recurring November spikes, growing year over year, dominate the series (Black Friday / holiday promotions).*
 
-<p align="center"><img src="outputs/charts/fig2_spend_by_channel.png" width="700" alt="Daily media spend by channel"></p>
+<p align="center"><img src="outputs/charts/spend_by_channel.png" width="700" alt="Daily media spend by channel"></p>
 
 *Fig. 2 — Daily spend by channel. Google Shopping is consistently dominant; Meta Facebook spend is concentrated in 2020 and largely absent after 2021; Google PMax only ramps up from mid-2023 onward.*
 
-<p align="center"><img src="outputs/charts/fig3_spend_concentration.png" width="600" alt="Spend concentration by channel"></p>
+<p align="center"><img src="outputs/charts/_spend_concentration.png" width="600" alt="Spend concentration by channel"></p>
 
 *Fig. 3 — Spend concentration: Google Shopping 81.1%, Google PMax 12.3%, Meta Facebook 3.5%, Google Paid Search 3.0%.*
 
@@ -72,7 +72,7 @@ The analysis combines:
 | Saturation | Hill |
 | ROI prior | LogNormal(mean=0.2, sd=0.9), shared across channels |
 
-<p align="center"><img src="outputs/charts/fig4_correlation_heatmap.png" width="600" alt="Correlation heatmap of media spend, target, and controls"></p>
+<p align="center"><img src="outputs/charts/correlation_heatmap.png" width="600" alt="Correlation heatmap of media spend, target, and controls"></p>
 
 *Fig. 4 — Correlation matrix of spend, target, and controls. Google Shopping spend correlates most strongly with purchases (0.62). Google PMax spend correlates strongly with the underlying trend (0.63), making it harder for the model to separate channel impact from organic business growth — a key source of uncertainty in PMax's estimates.*
 
@@ -80,7 +80,7 @@ The analysis combines:
 
 ### 3.1 Channel Contributions
 
-<p align="center"><img src="outputs/charts/fig5_channel_contribution_bump.png" width="700" alt="Channel contribution bump chart across model knots"></p>
+<p align="center"><img src="outputs/charts/channel_contribution_bump.png" width="700" alt="Channel contribution bump chart across model knots"></p>
 
 *Fig. 5 — Channel contribution bump chart: relative contribution rank (1 = highest) across the 24 model knots, spanning the full period.*
 
@@ -99,7 +99,7 @@ Contribution is not evenly distributed or constant over time. Google Shopping (t
 
 Marginal ROI is lower than average ROI for every channel, as expected under saturation. Google Shopping's mROI (0.061) is roughly **2×** Google Paid Search's and **3.6×** Meta Facebook's — making it the best channel for incremental budget. Google Paid Search's high average ROI should be read cautiously: its spend was concentrated in short bursts (late 2020, mid-2022), giving it a standard deviation (0.065) nearly as large as its mean.
 
-<p align="center"><img src="outputs/charts/fig6_hill_saturation_curves.png" width="750" alt="Hill saturation response curves by channel"></p>
+<p align="center"><img src="outputs/charts/hill_saturation_curves.png" width="750" alt="Hill saturation response curves by channel"></p>
 
 *Fig. 6 — Hill saturation response curves by channel. Solid line = observed spend range; dashed = estimated impact beyond current spend; dot = current spend level; shaded area = uncertainty.*
 
